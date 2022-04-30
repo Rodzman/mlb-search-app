@@ -4,38 +4,20 @@ type Data = {
   search: string | string[];
 };
 
-export default function handler(
+const ItemsService = async (search: string | string[]) => {
+  try {
+    const items = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${search}`);
+    return items.json();
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   const { search } = req.query;
-  res.status(200).json({ search });
+  const data = await ItemsService(search)
+  res.json(data)
 }
-
-// TODO: deve consultar o seguinte enpoint
-// 1. /api/items?q=:query -> https://api.mercadolibre.com/sites/MLA/search?q=:query
-// Retorno deve ser no seguinte formato:
-// {
-// "author":{
-//     "name":String
-//     “lastname”:String
-//     },
-//     "categories":[String,String,String,...],
-//     "items":[
-//     {
-//     "id":String,
-//     "title":String,
-//     "price":{
-//     "currency":String,
-//     "amount":Number,
-//     "decimals":"Number"
-//     },
-//     "picture":String,
-//     "condition":String,
-//     "free_shipping":Boolean
-//     },
-//     {...},
-//     {...},
-//     {...}
-//     ]
-//     }

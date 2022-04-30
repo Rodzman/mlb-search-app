@@ -4,35 +4,31 @@ type Data = {
   id: string | string[];
 };
 
-export default function handler(
+const ItemDescriptionService = async (id: string | string[]) => {
+  try {
+    const item = await fetch(`https://api.mercadolibre.com/items/${id}/description`);
+    return item.json();
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+const ItemService = async (id: string | string[]) => {
+  try {
+    const item = await fetch(`https://api.mercadolibre.com/items/${id}`);
+    return item.json();
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   const { id } = req.query;
-  res.status(200).json({ id: id });
+  const itemDetails = await ItemService(id);
+  const itemDescription = await ItemDescriptionService(id);
+  const item = {...itemDetails, description: itemDescription};
+  res.status(200).json(item);
 }
-
-// TODO: deve consultar dois enpoints
-// 1. https://api.mercadolibre.com/items/:id
-// 2. https://api.mercadolibre.com/items/:id/description
-// Retorno deve ser no seguinte formato:
-// {
-//     "author":{
-//     "name":String
-//     “lastname”:String
-//     },
-//     "item":{
-//     "id":String,
-//     "title":String,
-//     "price":{
-//     "currency":String,
-//     "amount":Number,
-//     "decimals":Number
-//     },
-//     "picture":String,
-//     "condition":String,
-//     "free_shipping":Boolean,
-//     "sold_quantity":Number,
-//     "description":String
-//     }
-//     }

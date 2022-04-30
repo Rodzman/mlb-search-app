@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
 const Item: NextPage = () => {
-    return (<div>Item Page</div>);
+    const {id} = useRouter().query
+    return (<div>Details Page - {id}</div>);
 }
 
 export default Item;

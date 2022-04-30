@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
@@ -16,13 +16,11 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Teste pagina ML</h1>
         <p className={styles.description}>
-          <Link href="/items">
-            Items
-          </Link>
+          <Link href="/items?search=Teste">Items</Link>
         </p>
-      </main> 
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

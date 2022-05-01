@@ -1,10 +1,21 @@
-$color: yellow;
-
 .container {
-  // flex-direction: column;
-  // background-color: $color;
-  // position: relative;
-  z-index: inherit;
-  // height: 60px;
-  // display: flex;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.input {
+  height: 39px;
+  box-sizing: border-box;
+  padding: 7px 60px 9px 15px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  color: #333;
+  font-size: 16px;
+  width: 100%;
+  margin: 0;
+  font-family: inherit;
 }

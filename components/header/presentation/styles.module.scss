@@ -1,0 +1,21 @@
+$color: yellow;
+
+.container {
+  flex-direction: column;
+  background-color: $color;
+  position: relative;
+  z-index: inherit;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo { 
+    background-image:url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo-pt__large_plus@2x.png);
+    height: 34px;
+    width: 134px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -999px;
+    background-size: 134px 34px;
+}

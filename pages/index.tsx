@@ -1,24 +1,23 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>ML - Test</title>
-        <meta name="description" content="Teste de criacao de app para o ML" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>ML - Search App</title>
+        <meta
+          name="description"
+          content="Frete grátis no dia ✓ Compre parcelado sem juros! Saiba mais sobre nossas incríveis ofertas e promoções em milhões de produtos."
+        />
+        <link
+          href="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/favicon.svg"
+          rel="icon"
+          data-head-react="true"
+        />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Teste pagina ML</h1>
-        <p className={styles.description}>
-          <Link href="/items?search=Teste">Items</Link>
-        </p>
-      </main>
+      NNN
     </div>
   );
 };

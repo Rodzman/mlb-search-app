@@ -11,7 +11,7 @@ const HeaderPresentation = ({ children }: Props) => {
         <Link href="/">
           <a className={styles.logo} />
         </Link>
-        <SearchBar>Search Bar</SearchBar>
+        <SearchBar />
       </Main>
     </div>
   );

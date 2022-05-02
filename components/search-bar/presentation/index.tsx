@@ -27,6 +27,13 @@ const SearchBarPresentation = ({ handleSubmit }: Props) => {
           role="combobox"
           className={styles.input}
         />
+        <button
+          type="submit"
+          className={styles.button}
+          data-testid={'search-bar-button'}
+        >
+          S
+        </button>
       </form>
     </div>
   );

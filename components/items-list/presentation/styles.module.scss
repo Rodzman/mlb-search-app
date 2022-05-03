@@ -1,0 +1,16 @@
+$color: white;
+
+.container {
+  flex-direction: column;
+  background-color: $color;
+  z-index: inherit;
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  border-radius: 4px 4px 0 0;
+}
+
+.list {
+  list-style-type: none;
+  padding-inline-start: 0;
+}

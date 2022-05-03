@@ -1,31 +1,22 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Main } from '../../components/main';
-import { SearchBar } from '../../components/search-bar';
+import { GetServerSideProps } from 'next';
+import { ItemsList } from '../../components/items-list';
 
-const Items: NextPage = () => {
-  const { search } = useRouter().query;
-  return (
-    <div>
-      <Head>
-        <title>ML - Search App</title>
-        <meta
-          name="description"
-          content="Página de buscas de produtos do Mercado Livre."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* <Main> */}
-      Items - {search}
-      <br />
-      <Link href={'/items/18'}>Item 18</Link>
-      <Link href={'/items/1'}>Item 1</Link>
-      <Link href={'/items/3'}>Item 3</Link>
-      {/* </Main> */}
-    </div>
+const Items: NextPage = ({ data }: any) => {
+  return <ItemsList items={data} />;
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const search = query.search;
+  const items = await fetch(
+    `https://api.mercadolibre.com/sites/MLA/search?q=${search}`
   );
+  const data = await items.json();
+  return {
+    props: {
+      data
+    }
+  };
 };
 
 export default Items;

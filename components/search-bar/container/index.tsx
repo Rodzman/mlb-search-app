@@ -6,11 +6,7 @@ const SearchBarContainer = () => {
   const router = useRouter();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(event.currentTarget.elements.as_word.value);
-    //TODO: Change route to items page
-    router.push(
-      '/api/items?search=' + event.currentTarget.elements.as_word.value
-    );
+    router.push('/items?search=' + event.currentTarget.elements.as_word.value);
   };
   return <SearchBarPresentation handleSubmit={handleSubmit} />;
 };

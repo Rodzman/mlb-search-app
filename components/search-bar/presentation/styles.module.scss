@@ -19,3 +19,53 @@
   margin: 0;
   font-family: inherit;
 }
+
+.searchButton {
+  left: auto;
+  height: 39px;
+  cursor: pointer;
+  width: 46px;
+  border: 0 rgba(0, 0, 0, 0.2);
+  top: 8px;
+  right: 1px;
+  position: absolute;
+  padding: 0;
+  background: 0 0;
+  font-size: 22px;
+  color: #666;
+  line-height: 1em;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 26px;
+    border-left: 1px solid #e6e6e6;
+    position: absolute;
+    top: 6.5px;
+  }
+}
+
+.buttonContent {
+  font-size: 16px;
+  line-height: 21px;
+
+  &::before {
+    content: '\EA27';
+    vertical-align: top;
+    font-variant: normal;
+    margin: 0;
+    text-align: center;
+    width: 1em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: navigation;
+  }
+}
+
+.form {
+  padding: 8px 1px;
+  overflow: auto;
+  height: 56px;
+  position: relative;
+}

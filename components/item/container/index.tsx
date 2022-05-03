@@ -3,7 +3,13 @@ import ItemPresentation from '../presentation';
 import type { Props } from '../types';
 
 const ItemContainer = ({ item }: Props) => {
-  const [newItem, setNewItem] = useState({});
+  const [newItem, setNewItem] = useState({
+    id: '',
+    title: '',
+    thumbnail: '',
+    price: '',
+    free_shipping: '',
+  });
 
   const preparePrice = (price: number) => {
     return price.toLocaleString('es-ar', {

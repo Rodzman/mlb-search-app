@@ -1,0 +1,15 @@
+$color: #ededed;
+$free_shipping_color: green;
+
+.breadcrumb {
+  line-height: 1.5rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: #999;
+
+  > span {
+    margin: 0 7px;
+    font-weight: bold;
+  }
+}

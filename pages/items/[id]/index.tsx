@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
+import { Breadcrumb } from '../../../components/breadcrumb';
 import { ItemDetails } from '../../../components/item-details';
 import { Main } from '../../../components/main';
 
-const Item: NextPage = ({data}: any) => {
+const Item: NextPage = ({ data, categories }: any) => {
   return (
     <Main>
-      <section>Breadcrumb</section>
+      <Breadcrumb categories={categories} />
       <ItemDetails item={data} />
     </Main>
   );
@@ -26,7 +27,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     }
   };
 };
-
 
 const ItemDescriptionService = async (id: string | string[] | undefined) => {
   try {
@@ -52,13 +52,14 @@ const ItemService = async (id: string | string[] | undefined) => {
 
 const CategoriesService = async (id: string | string[] | undefined) => {
   try {
-    const category = await fetch(`https://api.mercadolibre.com/categories/${id}`);
+    const category = await fetch(
+      `https://api.mercadolibre.com/categories/${id}`
+    );
     const data = await category.json();
     return data;
   } catch (error) {
     console.log(error);
   }
 };
-
 
 export default Item;

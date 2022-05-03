@@ -8,7 +8,7 @@ const ItemContainer = ({ item }: Props) => {
     title: '',
     thumbnail: '',
     price: '',
-    free_shipping: '',
+    free_shipping: ''
   });
 
   const preparePrice = (price: number) => {

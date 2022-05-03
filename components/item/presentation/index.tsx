@@ -1,11 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Main } from '../../main';
-import { SearchBar } from '../../search-bar';
 import type { Props } from '../types';
 import styles from './styles.module.scss';
 
-const ItemPresentation = ({ item }: any) => {
+const ItemPresentation = ({ item }: Props) => {
   return (
     <Link href={`/items/${item.id}`} passHref>
       <div className={styles.item}>

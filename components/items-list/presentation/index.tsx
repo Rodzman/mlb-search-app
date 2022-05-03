@@ -7,15 +7,15 @@ import styles from './styles.module.scss';
 
 const ItemsListPresentation = ({ items }: any) => {
   return (
-    <ol className={styles.list}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <ol className={styles.list}>
         {items.results.map((item: any) => (
           <li key={item.id}>
             <Item item={item} />
           </li>
         ))}
-      </div>
-    </ol>
+      </ol>
+    </div>
   );
 };
 

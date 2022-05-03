@@ -2,9 +2,9 @@ interface Item {
   id: string;
   title: string;
   thumbnail: string;
-  price: number;
-  freeShipping: boolean;
-  shipping: Shipping;
+  price: any;
+  free_shipping: any;
+  shipping?: Shipping;
 }
 
 interface Shipping {

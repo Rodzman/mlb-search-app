@@ -1,5 +1,14 @@
 $color: yellow;
 
+.teste {
+  max-width: 1215px;
+    padding-left: 10px;
+    padding-right: 28px;
+    width: 100%;
+    display: flex;
+    align-self: center;
+}
+
 .container {
   flex-direction: column;
   background-color: $color;
@@ -19,4 +28,5 @@ $color: yellow;
     text-indent: -999px;
     background-size: 134px 34px;
     margin-right: 50px;
+    margin-top: 11px ;
 }

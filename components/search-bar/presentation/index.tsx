@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 const SearchBarPresentation = ({ handleSubmit }: Props) => {
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           aria-label="Digite o que você quer encontrar"
@@ -29,10 +29,10 @@ const SearchBarPresentation = ({ handleSubmit }: Props) => {
         />
         <button
           type="submit"
-          className={styles.button}
+          className={styles.searchButton}
           data-testid={'search-bar-button'}
         >
-          S
+          <div className={styles.buttonContent} />
         </button>
       </form>
     </div>

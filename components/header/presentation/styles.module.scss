@@ -1,14 +1,5 @@
 $color: yellow;
 
-.teste {
-  max-width: 1215px;
-    padding-left: 10px;
-    padding-right: 28px;
-    width: 100%;
-    display: flex;
-    align-self: center;
-}
-
 .container {
   flex-direction: column;
   background-color: $color;
@@ -19,14 +10,21 @@ $color: yellow;
   justify-content: center;
 }
 
-.logo { 
-    background-image:url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo-pt__large_plus@2x.png);
-    height: 34px;
-    width: 134px;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    text-indent: -999px;
-    background-size: 134px 34px;
-    margin-right: 50px;
-    margin-top: 11px ;
+.wrapper {
+  max-width: 1215px;
+  width: 100%;
+  display: flex;
+  align-self: center;
+}
+
+.logo {
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo-pt__large_plus@2x.png);
+  height: 34px;
+  width: 134px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-indent: -999px;
+  background-size: 134px 34px;
+  margin-right: 50px;
+  margin-top: 11px;
 }

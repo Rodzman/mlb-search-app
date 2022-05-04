@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const ItemPresentation = ({ item }: Props) => {
   return (
     <Link href={`/items/${item.id}`} passHref>
-      <div className={styles.item}>
+      <div className={styles.item} data-testid={`testId-item${item.id}`}>
         <Image
           src={
             item.thumbnail ||

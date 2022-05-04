@@ -3,6 +3,10 @@ interface Item {
   title: string;
 }
 
+interface Data {
+  results: Item[];
+}
+
 export type Props = {
-  items: Array<Item>;
+  data: Data;
 };

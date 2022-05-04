@@ -1,4 +1,3 @@
-import { Main } from '../../main';
 import type { Props } from '../types';
 import styles from './styles.module.scss';
 

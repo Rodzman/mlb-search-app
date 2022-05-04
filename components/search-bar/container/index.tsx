@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import SearchBarPresentation from '../presentation';
-import type { Props } from '../types';
 
 const SearchBarContainer = () => {
   const router = useRouter();

@@ -1,22 +1,32 @@
-import type { NextPage } from 'next';
-import { GetServerSideProps } from 'next';
+import type {
+  NextPage,
+  InferGetServerSidePropsType,
+  GetServerSideProps
+} from 'next';
 import { Breadcrumb } from '../../../components/breadcrumb';
 import { ItemDetails } from '../../../components/item-details';
-import { Main } from '../../../components/main';
+import {
+  ItemService,
+  DescriptionService,
+  CategoriesService
+} from '../../../services';
 
-const Item: NextPage = ({ data, categories }: any) => {
+const Item: NextPage = ({
+  data,
+  categories
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <Main>
+    <>
       <Breadcrumb categories={categories} />
       <ItemDetails item={data} />
-    </Main>
+    </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const id = query.id;
   const itemDetails = await ItemService(id);
-  const itemDescription = await ItemDescriptionService(id);
+  const itemDescription = await DescriptionService(id);
   const categories = await CategoriesService(itemDetails.category_id);
   const item = { ...itemDetails, description: itemDescription };
   const data = await item;
@@ -26,40 +36,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       categories
     }
   };
-};
-
-const ItemDescriptionService = async (id: string | string[] | undefined) => {
-  try {
-    const item = await fetch(
-      `https://api.mercadolibre.com/items/${id}/description`
-    );
-    const itemDescription = await item.json();
-    return itemDescription;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const ItemService = async (id: string | string[] | undefined) => {
-  try {
-    const item = await fetch(`https://api.mercadolibre.com/items/${id}`);
-    const itemData = await item.json();
-    return itemData;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const CategoriesService = async (id: string | string[] | undefined) => {
-  try {
-    const category = await fetch(
-      `https://api.mercadolibre.com/categories/${id}`
-    );
-    const data = await category.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 export default Item;

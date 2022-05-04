@@ -1,4 +1,4 @@
-interface Details {
+export interface Details {
   id: string;
   title: string;
   thumbnail: string;
@@ -22,6 +22,11 @@ interface Picture {
   id: string;
   url: string;
   secure_url: string;
+}
+
+export interface Conditions {
+  new: string;
+  used: string;
 }
 
 export type Props = {

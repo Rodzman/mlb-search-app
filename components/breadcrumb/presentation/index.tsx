@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ShowComponent } from '../../show-component';
 import type { Props } from '../types';
 import styles from './styles.module.scss';
 
@@ -10,7 +11,9 @@ const BreadcrumbPresentation = ({ categories }: Props) => {
           <Link href={`#`} passHref>
             {category.name}
           </Link>
-          {index !== categories.path_from_root.length - 1 && <span>{`>`}</span>}
+          <ShowComponent rule={index !== categories.path_from_root.length - 1}>
+            <span>{`>`}</span>
+          </ShowComponent>
         </div>
       ))}
     </div>

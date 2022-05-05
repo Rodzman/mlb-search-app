@@ -1,8 +1,7 @@
-$color: #ededed;
-$free_shipping_color: green;
+@import '../../../styles/colors.module.scss';
 
 .item {
-  background-color: #fff;
+  background-color: $background-color;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -11,14 +10,14 @@ $free_shipping_color: green;
 }
 
 .info {
-  color: #333;
+  color: $info-color;
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   max-width: 368px;
   width: 368px px;
   z-index: 1;
-  border-left: 1px solid #ededed;
+  border-left: 1px solid $border-color;
   padding: 0 20px;
 }
 
@@ -61,13 +60,13 @@ $free_shipping_color: green;
 
 .description {
   line-height: 1.5rem;
-  color: #333;
+  color: $info-color;
 }
 
 .button {
-  background-color: #3483fa;
+  background-color: $buy-button-bgcolor;
   border-color: transparent;
-  color: #fff;
+  color: $buy-button-color;
   box-shadow: 0 0 0 0 #fff;
   border-radius: 6px;
   display: inline-block;

@@ -10,9 +10,10 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
     "test": "jest --config ./jest.config.js",
-    "cypress:open": "cypress open",
-    "cy:run:all": "cypress run --env CI=true",
-    "test:integration": "start-server-and-test dev 3000 cy:run:all --project cypress/tsconfig.json"
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "next": "12.1.5",

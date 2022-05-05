@@ -1,34 +1,68 @@
+# MLB Search App
+
+*This project was designed as a test to allow users to search for products and services in the Mercado Libre platform.
+It's still a PoC and has no pretensions to be official.*
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Index
+- [Stack](#stack)
+- [Getting Started](#getting-started)
+- [Testing](#testing)
+- [Contact](#contact)
+## Stack
+
+### NextJS
+NextJS was chosen due to the project focus and strategy. NextJS is a SSR JavaScript framework that already has a solid structure allowing minimal configuration. Also, it is SEO friendly which was one of the initial requirements.
+### Node.js
+This project was developed using [NodeJS LTS/Gallium](https://nodejs.org/download/release/latest-gallium/).
+
+We recommend using [NVM](https://github.com/nvm-sh/nvm). Nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.
+
+### TypeScript
+It also was used [TypeScript](https://www.typescriptlang.org/docs/) due to it's several proven advantages over vanilla JavaScript when typing and developing allowing to minimize the possibilties of bugs.
+
+### Sass
+[Sass](https://sass-lang.com/documentation) is a powerful and stable stylesheet language that is compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more while keeping all of it very organized.
+
+To make it even more organized it was used the CSS Modules strategy where all class names are scoped locally by default.
 ## Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app running.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Testing
+This project has two libs for testing. [RTL - React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Cypress](https://docs.cypress.io/). While they have similar principles - to test the user experience while using the app - and we could have used only one of them, we chose to focus on each type of tests showcasing diffent ways of doing it.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+RTL is implemented with [Jest](https://jestjs.io/pt-BR/docs/getting-started) testing framework and was used mainly on the component level and its iterations. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Cypress, in the other hand, is more focused on the integration tests. It runs a complete user path example but with still only one scenario described.
 
-## Learn More
+To run the tests there are two main commands:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# For jest/RTL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm test
+#or
+npm run test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# For Cypress
 
-## Deploy on Vercel
+npm run e2e
+# or
+npm run e2e:headless
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Commits
+This project has a git commit hook testing validation. It uses [Husky](https://typicode.github.io/husky/#/) to run a test command before commiting the code. It tries to assure even more code security and less bugs. It's configured and runs automatically at every commit.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+For any information regarding this app and it's contents please refer to [Rodrigo Souza](https://github.com/Rodzman) at designrsp@gmail.com .

@@ -7,7 +7,9 @@ const ItemsListPresentation = ({ data }: Props) => {
   return (
     <div className={styles.container}>
       <ShowComponent rule={data.results.length === 0}>
-        <div className={styles.empty}><h2>No fueron encontrados resultados para su búsqueda.</h2></div>
+        <div className={styles.empty}>
+          <h2>No fueron encontrados resultados para su búsqueda.</h2>
+        </div>
       </ShowComponent>
       <ShowComponent rule={data.results.length > 0}>
         <ol className={styles.list}>

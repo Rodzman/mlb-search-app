@@ -1,8 +1,6 @@
-$color: #ededed;
-$free_shipping_color: green;
+@import "../../../styles/colors.module.scss";
 
 .item {
-  border-bottom: 1px solid $color;
   padding: 20px;
   display: flex;
   &:hover {
@@ -12,7 +10,7 @@ $free_shipping_color: green;
 
 .info {
   margin-left: 20px;
-  color: #333;
+  color: $info-color;
 }
 
 .title {

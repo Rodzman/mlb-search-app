@@ -20,7 +20,7 @@ const SearchBarPresentation = ({ handleSubmit }: Props) => {
           aria-activedescendant=""
           aria-controls="cb1-list"
           aria-autocomplete="list"
-          id="searchbar-input"
+          id="search-bar-input"
           aria-expanded="false"
           data-testid="search-bar-input"
           role="combobox"

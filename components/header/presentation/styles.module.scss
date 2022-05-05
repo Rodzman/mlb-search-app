@@ -1,8 +1,8 @@
-$color: yellow;
+@import "../../../styles/colors.module.scss";
 
 .container {
   flex-direction: column;
-  background-color: $color;
+  background-color: $header-color;
   position: relative;
   z-index: inherit;
   height: 60px;

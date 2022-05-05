@@ -1,14 +1,13 @@
-$color: #ededed;
-$free_shipping_color: green;
+@import "../../../styles/colors.module.scss";
 
 .breadcrumb {
   line-height: 1.5rem;
   height: 50px;
   display: flex;
   align-items: center;
-  color: #999;
+  color: $breadcrumb-color;
 
-  > span {
+  span {
     margin: 0 7px;
     font-weight: bold;
   }
